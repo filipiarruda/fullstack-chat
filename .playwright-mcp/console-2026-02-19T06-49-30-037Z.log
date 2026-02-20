@@ -1,0 +1,167 @@
+[     285ms] [ERROR] ./apps/frontend/src/app/chat/[id]/page.tsx:5:1
+Module not found: Can't resolve '@/contexts/auth-context'
+  3 | import { useState, useEffect, useRef, useCallback } from 'react';
+  4 | import { useParams, useRouter } from 'next/navigation';
+> 5 | import { useAuth } from '@/contexts/auth-context';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getSocketService, Message } from '@/lib/socket';
+  7 | import { chatService } from '@/services/chat.service';
+  8 | import { useChat } from '@/contexts/chat-context';
+
+Import map: aliased to relative './src/contexts/auth-context' inside of [project]/apps/frontend
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_b3fb3b5f._.js:1920
+[     285ms] [ERROR] ./apps/frontend/src/app/chat/[id]/page.tsx:8:1
+Module not found: Can't resolve '@/contexts/chat-context'
+   6 | import { getSocketService, Message } from '@/lib/socket';
+   7 | import { chatService } from '@/services/chat.service';
+>  8 | import { useChat } from '@/contexts/chat-context';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function ChatPage() {
+  11 |   const { id: chatId } = useParams<{ id: string }>();
+
+Import map: aliased to relative './src/contexts/chat-context' inside of [project]/apps/frontend
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_b3fb3b5f._.js:1920
+[     314ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[    1255ms] Error: ./apps/frontend/src/app/chat/[id]/page.tsx:5:1
+Module not found: Can't resolve '@/contexts/auth-context'
+  3 | import { useState, useEffect, useRef, useCallback } from 'react';
+  4 | import { useParams, useRouter } from 'next/navigation';
+> 5 | import { useAuth } from '@/contexts/auth-context';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getSocketService, Message } from '@/lib/socket';
+  7 | import { chatService } from '@/services/chat.service';
+  8 | import { useChat } from '@/contexts/chat-context';
+
+Import map: aliased to relative './src/contexts/auth-context' inside of [project]/apps/frontend
+
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./apps/frontend/src/app/chat/[id]/page.tsx:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at Object.getCompilationErrors (file:///var/www/html/test/node-chat/fullstack-chat/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1008:59)
+    at DevBundlerService.getCompilationError (file:///var/www/html/test/node-chat/fullstack-chat/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///var/www/html/test/node-chat/fullstack-chat/node_modules/next/dist/server/dev/next-dev-server.js:706:42)
+    at DevServer.findPageComponents (file:///var/www/html/test/node-chat/fullstack-chat/node_modules/next/dist/server/dev/next-dev-server.js:676:43)
+    at async DevServer.renderErrorToResponseImpl (file:///var/www/html/test/node-chat/fullstack-chat/node_modules/next/dist/server/base-server.js:1654:30)
+[    1251ms] [ERROR] ./apps/frontend/src/app/chat/[id]/page.tsx:5:1
+Module not found: Can't resolve '@/contexts/auth-context'
+  3 | import { useState, useEffect, useRef, useCallback } from 'react';
+  4 | import { useParams, useRouter } from 'next/navigation';
+> 5 | import { useAuth } from '@/contexts/auth-context';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getSocketService, Message } from '@/lib/socket';
+  7 | import { chatService } from '@/services/chat.service';
+  8 | import { useChat } from '@/contexts/chat-context';
+
+Import map: aliased to relative './src/contexts/auth-context' inside of [project]/apps/frontend
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_b3fb3b5f._.js:1920
+[    1253ms] [ERROR] ./apps/frontend/src/app/chat/[id]/page.tsx:8:1
+Module not found: Can't resolve '@/contexts/chat-context'
+   6 | import { getSocketService, Message } from '@/lib/socket';
+   7 | import { chatService } from '@/services/chat.service';
+>  8 | import { useChat } from '@/contexts/chat-context';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function ChatPage() {
+  11 |   const { id: chatId } = useParams<{ id: string }>();
+
+Import map: aliased to relative './src/contexts/chat-context' inside of [project]/apps/frontend
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_b3fb3b5f._.js:1920
+[    1612ms] [ERROR] ./apps/frontend/src/app/chat/[id]/page.tsx:5:1
+Module not found: Can't resolve '@/contexts/auth-context'
+  3 | import { useState, useEffect, useRef, useCallback } from 'react';
+  4 | import { useParams, useRouter } from 'next/navigation';
+> 5 | import { useAuth } from '@/contexts/auth-context';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 | import { getSocketService, Message } from '@/lib/socket';
+  7 | import { chatService } from '@/services/chat.service';
+  8 | import { useChat } from '@/contexts/chat-context';
+
+Import map: aliased to relative './src/contexts/auth-context' inside of [project]/apps/frontend
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_b3fb3b5f._.js:1920
+[    1612ms] [ERROR] ./apps/frontend/src/app/chat/[id]/page.tsx:8:1
+Module not found: Can't resolve '@/contexts/chat-context'
+   6 | import { getSocketService, Message } from '@/lib/socket';
+   7 | import { chatService } from '@/services/chat.service';
+>  8 | import { useChat } from '@/contexts/chat-context';
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function ChatPage() {
+  11 |   const { id: chatId } = useParams<{ id: string }>();
+
+Import map: aliased to relative './src/contexts/chat-context' inside of [project]/apps/frontend
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_b3fb3b5f._.js:1920
+[  381423ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_b3fb3b5f._.js:1206
+[  384737ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/:0

@@ -1,0 +1,137 @@
+[   32247ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3002/auth/login:0
+[  114995ms] [ERROR] Access to fetch at 'http://localhost:3002/auth/login' from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled. @ http://localhost:3000/login:0
+[  114995ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:3002/auth/login:0
+[  247000ms] TypeError: (0 , __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__.useState) is not a function or its return value is not iterable
+    at PainelPage (http://localhost:3000/_next/static/chunks/_af87cc34._.js:334:189)
+    at Object.react_stack_bottom_frame (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:14826:24)
+    at renderWithHooks (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:4651:24)
+    at updateFunctionComponent (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:6112:21)
+    at beginWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:6708:24)
+    at runWithFiberInDEV (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:965:74)
+    at performUnitOfWork (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9562:97)
+    at workLoopSync (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9456:40)
+    at renderRootSync (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9440:13)
+    at performWorkOnRoot (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:9105:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js:10230:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_a0e4c7b4._.js:2647:64)
+[  296200ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:2297
+[ 1374318ms] [ERROR] ./apps/frontend/src/app/chat/[id]/page.tsx:9:14
+Ecmascript file had an error
+   7 | import { Message } from '@/types/chat.types';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Chat | Fullstack Chat',
+  11 |   description: 'Sala de chat',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[ 1376530ms] [ERROR] ./apps/frontend/src/app/chat/[id]/page.tsx:9:14
+Ecmascript file had an error
+   7 | import { Message } from '@/types/chat.types';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Chat | Fullstack Chat',
+  11 |   description: 'Sala de chat',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[ 1376772ms] [ERROR] ./apps/frontend/src/app/chat/[id]/page.tsx:9:14
+Ecmascript file had an error
+   7 | import { Message } from '@/types/chat.types';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Chat | Fullstack Chat',
+  11 |   description: 'Sala de chat',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[ 1377687ms] [ERROR] ./apps/frontend/src/app/chat/[id]/page.tsx:9:14
+Ecmascript file had an error
+   7 | import { Message } from '@/types/chat.types';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Chat | Fullstack Chat',
+  11 |   description: 'Sala de chat',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[ 1378131ms] [ERROR] ./apps/frontend/src/app/chat/[id]/page.tsx:9:14
+Ecmascript file had an error
+   7 | import { Message } from '@/types/chat.types';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Chat | Fullstack Chat',
+  11 |   description: 'Sala de chat',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
+[ 1379314ms] [ERROR] ./apps/frontend/src/app/chat/[id]/page.tsx:9:14
+Ecmascript file had an error
+   7 | import { Message } from '@/types/chat.types';
+   8 |
+>  9 | export const metadata = {
+     |              ^^^^^^^^
+  10 |   title: 'Chat | Fullstack Chat',
+  11 |   description: 'Sala de chat',
+  12 | };
+
+You are attempting to export "metadata" from a component marked with "use client", which is disallowed. Either remove the export, or the "use client" directive. Read more: https://nextjs.org/docs/app/api-reference/directives/use-client
+
+Import traces:
+  Client Component Browser:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component Browser]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Client Component SSR]
+    ./apps/frontend/src/app/chat/[id]/page.tsx [Server Component] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127

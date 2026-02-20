@@ -13,8 +13,11 @@
   "dependencies": {
     "@repo/ui": "*",
     "next": "16.1.0",
+    "postcss": "^8.4.33",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "socket.io-client": "^4.8.3",
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
@@ -22,6 +25,7 @@
     "@types/node": "^22.15.3",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "autoprefixer": "^10.4.18",
     "eslint": "^9.39.1",
     "typescript": "5.9.2"
   }
