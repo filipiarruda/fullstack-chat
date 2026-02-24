@@ -10,6 +10,7 @@ export interface Message {
     name: string;
   };
   createdAt: string;
+  updatedAt: string;
 }
 
 class SocketService {

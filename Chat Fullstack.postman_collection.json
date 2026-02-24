@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "df62daf9-9382-4d26-aae7-22e68ffbbf38",
+		"name": "Chat Fullstack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Filipi\",\n  \"email\": \"filipi@email.com\",\n  \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{API}}/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"filipi@email.com\",\n  \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{API}}/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Chat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"createdByUserId\": \"69ae0966-ab69-4ca9-8327-5eb020986cd6\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{API}}/chats"
+			},
+			"response": []
+		},
+		{
+			"name": "Join Chat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"9270efdf-4a01-46d8-88d3-e49ef90f11ed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{API}}/chats/1705dca8-6b14-4ed2-9713-dede5ba677c6/join"
+			},
+			"response": []
+		},
+		{
+			"name": "List Chat Messages",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OWFlMDk2Ni1hYjY5LTRjYTktODMyNy01ZWIwMjA5ODZjZDYiLCJlbWFpbCI6ImZpbGlwaUBlbWFpbC5jb20iLCJpYXQiOjE3NzE0NTk1NjIsImV4cCI6MTc3MTQ2MzE2Mn0.tuG1FFwLHX2efdyjm9t0PsO3CJ-KDnCYynOILP5LwDc"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{API}}/messages/chat/560f2308-19de-4de5-8364-e75862847f24"
+			},
+			"response": []
+		},
+		{
+			"name": "Send Chat Message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OWFlMDk2Ni1hYjY5LTRjYTktODMyNy01ZWIwMjA5ODZjZDYiLCJlbWFpbCI6ImZpbGlwaUBlbWFpbC5jb20iLCJpYXQiOjE3NzE0NTk1NjIsImV4cCI6MTc3MTQ2MzE2Mn0.tuG1FFwLHX2efdyjm9t0PsO3CJ-KDnCYynOILP5LwDc"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"chatId\": \"560f2308-19de-4de5-8364-e75862847f24\",\n  \"senderId\": \"69ae0966-ab69-4ca9-8327-5eb020986cd6\",\n  \"content\": \"Olá, pessoal!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{API}}/messages"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "API",
+			"value": "http://localhost:3002"
+		}
+	]
+}

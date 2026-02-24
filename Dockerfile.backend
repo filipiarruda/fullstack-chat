@@ -1,0 +1,60 @@
+# Stage 1: Dependencies
+FROM node:20-alpine AS deps
+WORKDIR /app
+
+# Copy monorepo root files
+COPY package*.json turbo.json ./
+
+# Copy workspace files
+COPY apps/backend/package*.json ./apps/backend/
+COPY packages ./packages
+
+# Install dependencies
+RUN npm ci
+
+
+# Stage 2: Build
+FROM node:20-alpine AS builder
+WORKDIR /app
+
+# Copy from deps stage
+COPY --from=deps /app/node_modules ./node_modules
+
+# Copy monorepo files
+COPY package*.json turbo.json ./
+
+# Copy workspace files
+COPY apps/backend ./apps/backend
+COPY packages ./packages
+
+# Build backend
+RUN npm run build --filter=backend
+
+
+# Stage 3: Runtime
+FROM node:20-alpine AS runtime
+WORKDIR /app
+
+# Install curl for health checks
+RUN apk add --no-cache curl
+
+# Copy from builder
+COPY --from=deps /app/node_modules ./node_modules
+COPY --from=builder /app/apps/backend/dist ./apps/backend/dist
+COPY --from=builder /app/apps/backend/package*.json ./apps/backend/
+
+# Set environment
+ENV NODE_ENV=production
+ENV PORT=3002
+
+WORKDIR /app/apps/backend
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:3002/health || exit 1
+
+# Expose port
+EXPOSE 3002
+
+# Start application
+CMD ["node", "dist/main"]

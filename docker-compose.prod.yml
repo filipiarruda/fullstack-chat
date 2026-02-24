@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    env_file:
+      - .env.prod
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "127.0.0.1:3306:3306"
+
+  backend:
+    image: chat-backend:latest
+    container_name: chat-backend
+    restart: always
+    depends_on:
+      - mysql
+    env_file:
+      - .env.prod
+    environment:
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+    ports:
+      - "3001:3000"
+
+  frontend:
+    image: chat-frontend:latest
+    container_name: chat-frontend
+    restart: always
+    env_file:
+      - .env.prod
+    ports:
+      - "3000:3000"
+
+volumes:
+  mysql_data:

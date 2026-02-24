@@ -1,0 +1,97 @@
+version: '3.9'
+
+services:
+  # Backend NestJS Application
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: fullstack-chat-backend
+    ports:
+      - "3002:3002"
+    environment:
+      NODE_ENV: production
+      PORT: 3002
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: chat_db
+      DB_USER: chat_user
+      DB_PASSWORD: chat_password
+    volumes:
+      # For development, uncomment to enable hot reload
+      # - ./apps/backend/src:/app/apps/backend/src
+      # - ./apps/backend/package.json:/app/apps/backend/package.json
+      - backend-node-modules:/app/node_modules
+    networks:
+      - fullstack-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+    depends_on:
+      - mysql
+
+  # Frontend Next.js Application
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: fullstack-chat-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      # Next.js API URL (internal Docker network)
+      NEXT_PUBLIC_API_URL: http://backend:3002
+    volumes:
+      # For development, uncomment to enable hot reload
+      # - ./apps/frontend/app:/app/apps/frontend/app
+      # - ./apps/frontend/public:/app/apps/frontend/public
+      - frontend-node-modules:/app/node_modules
+    networks:
+      - fullstack-network
+    depends_on:
+      - backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: fullstack-chat-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: chat_db
+      MYSQL_USER: chat_user
+      MYSQL_PASSWORD: chat_password
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - fullstack-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  mysql-data:
+    driver: local
+  backend-node-modules:
+    driver: local
+  frontend-node-modules:
+    driver: local
+
+networks:
+  fullstack-network:
+    driver: bridge

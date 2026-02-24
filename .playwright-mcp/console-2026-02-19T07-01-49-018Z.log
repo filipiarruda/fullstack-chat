@@ -1,4 +1,0 @@
-[   69935ms] [WARNING] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:2297
-[  126843ms] [ERROR] ❌ joinChat: Socket não conectado. Status: false @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
-[  126844ms] [ERROR] ❌ Erro ao configurar WebSocket: Socket não está conectado @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:3127
-[  132074ms] [WARNING] ⚠️ joinChat timeout - nenhuma resposta do servidor @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_f3530cac._.js:2297
