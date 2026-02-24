@@ -1,135 +1,129 @@
-# Turborepo starter
+# 💬 Fullstack Chat
 
-This Turborepo starter is maintained by the Turborepo core team.
+Um chat em tempo real desenvolvido com **Next.js** no frontend, **NestJS** no backend e **MySQL** como banco de dados. O projeto utiliza o **Turborepo** como monorepo, garantindo uma base de código unificada em TypeScript e facilitando a execução de todas as aplicações com um único comando.
 
-## Using this example
+---
 
-Run the following command:
+## 🚀 Tecnologias
 
-```sh
-npx create-turbo@latest
-```
+| Camada      | Tecnologia                                    |
+|-------------|-----------------------------------------------|
+| Frontend    | [Next.js](https://nextjs.org/) + Tailwind CSS |
+| Backend     | [NestJS](https://nestjs.com/) + Socket.IO     |
+| Banco       | [MySQL](https://www.mysql.com/)               |
+| Monorepo    | [Turborepo](https://turborepo.dev/)           |
+| Linguagem   | [TypeScript](https://www.typescriptlang.org/) |
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+## 📁 Estrutura de pastas
 
 ```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+fullstack-chat/
+├── apps/
+│   ├── frontend/          # Aplicação Next.js (porta 3000)
+│   └── backend/           # API NestJS + WebSocket (porta 3002)
+├── packages/
+│   ├── eslint-config/     # Configurações ESLint compartilhadas
+│   ├── typescript-config/ # Configurações TypeScript compartilhadas
+│   └── ui/                # Componentes de UI compartilhados
+├── package.json
+└── turbo.json
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+---
 
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+## ⚙️ Como rodar localmente
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+### Pré-requisitos
 
-### Develop
+- [Node.js](https://nodejs.org/) >= 18
+- [MySQL](https://www.mysql.com/) rodando localmente
+- npm >= 10
 
-To develop all apps and packages, run the following command:
+---
 
-```
-cd my-turborepo
+### 1️⃣ Clone o repositório
 
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
+```bash
+git clone https://github.com/filipiarruda/fullstack-chat.git
+cd fullstack-chat
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+---
 
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
+### 2️⃣ Instale as dependências
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+Instale na raiz do projeto (gerencia o workspace do Turborepo):
+
+```bash
+npm install
 ```
 
-### Remote Caching
+Em seguida, instale nas aplicações individualmente:
 
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
+```bash
+# Frontend
+cd apps/frontend
+npm install
 
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+# Backend
+cd ../backend
+npm install
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
+# Volte para a raiz
+cd ../..
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+---
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+### 3️⃣ Configure as variáveis de ambiente
 
+#### Backend — `apps/backend/.env`
+
+Crie o arquivo `apps/backend/.env` com o conteúdo abaixo:
+
+```env
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=user
+DB_PASSWORD=password
+DB_NAME=fullstack_chat
+APP_PORT=3002
 ```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
+> ⚠️ Ajuste os valores de `DB_USER`, `DB_PASSWORD` e `DB_NAME` conforme a sua instalação local do MySQL.
+
+#### Frontend — `apps/frontend/.env.local`
+
+Crie o arquivo `apps/frontend/.env.local` com o conteúdo abaixo:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3002
 ```
 
-## Useful Links
+---
 
-Learn more about the power of Turborepo:
+### 4️⃣ Execute o projeto
 
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+Na raiz do projeto, rode:
+
+```bash
+npm run dev
+```
+
+Esse comando inicializa o Turborepo, que sobe o **frontend** e o **backend** ao mesmo tempo.
+
+| Aplicação | URL                   |
+|-----------|-----------------------|
+| Frontend  | http://localhost:3000 |
+| Backend   | http://localhost:3002 |
+
+---
+
+## ✨ Funcionalidades
+
+- 🔐 Autenticação com JWT
+- 💬 Criação e participação em salas de chat
+- ⚡ Mensagens em tempo real via WebSocket (Socket.IO)
+- 📱 Interface responsiva com Tailwind CSS
